@@ -1,0 +1,133 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-areas: 
+    "header header header header header"
+    "aside aside aside aside aside"
+    "main main main main main"
+    ". . . . ."
+    "footer footer footer footer footer";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(75px, auto));
+    width: 100%;
+}
+
+header {
+    align-items: center;
+    background-color: #f8edc8;
+    display: flex;
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+header .logo {
+    width: 30px;
+}
+
+header .logo img {
+    width: 100%;
+}
+
+header nav {
+    display: none;
+}
+
+header .menu-mobile {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+}
+
+.menu-mobile .dash {
+    background-color: black;
+    border-radius: 20px;
+    height: 3px;
+    margin: 2.5px 0;
+    width: 100%;
+}
+
+main {
+    grid-area: main;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+aside {
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
+    grid-area: aside;
+    justify-content: center;
+    margin: 10px 20px;
+}
+
+aside p {
+    display: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+aside nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+aside a {
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    grid-area: footer;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width:768px) {
+}
+@media (min-width: 992px) {
+    .grid {
+        grid-template-areas: 
+        "header header header header header"
+        "aside . main main main"
+        "aside . main main main"
+        ". . main main main"
+        "footer footer footer footer footer";
+    }
+
+    header nav {
+        display: block;
+    }
+
+    header .menu-mobile {
+        display: none;
+    }
+
+    aside {
+        flex-direction: column;
+    }
+
+    aside p {
+        display: block;
+    }
+
+    aside nav {
+        flex-direction: column;
+    }
+}
+
